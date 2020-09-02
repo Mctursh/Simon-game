@@ -12,7 +12,7 @@ var level = 0;
 // Starting Sequence
 
 
-["keypress", "ontouchstart"].forEach( function (evt) {
+["keypress", "touchstart"].forEach( function (evt) {
   document.querySelector("body").addEventListener(evt, nextSequence, false);
 })
 
@@ -121,7 +121,7 @@ function startOver() {
   gamePattern = [];
 
   //The startig sequence Again!
-  ["keypress", "ontouchstart"].forEach( function (evt) {
+  ["keypress", "touchstart"].forEach( function (evt) {
     document.querySelector("body").addEventListener(evt, nextSequence, false);
   })
 };
