@@ -1,6 +1,7 @@
 # Simon-game
 
-# How to play the game: when the game starts and you see a highlighted box you'll click it to move to level 2
+# How to play the game: 
+When the game starts and you see a highlighted box you'll click it to move to level 2
 
 Then another box wil be highlighted, now you'll follow the pattern by clicking first the level 1 highlighted box before the level 2 highlighted box.
 
