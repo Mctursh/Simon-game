@@ -12,8 +12,18 @@ var level = 0;
 // Starting Sequence
 
 
-["keypress", "touchstart"].forEach( function (evt) {
-  document.querySelector("body").addEventListener(evt, nextSequence, false);
+// $(document).keydown(function() {
+//   nextSequence()
+//
+//   $(document).unbind();
+// });
+
+// Starting sequence for mobile
+
+$("h1").click( function () {
+  nextSequence();
+
+  $("h1").unbind();
 })
 
 $(".btn").click(function(event) {
@@ -96,7 +106,8 @@ function checkAnswer(currentLevel) {
     }
 
   } else {
-    $("h1").text("Game Over, press any key to restart");
+    $("h1").unbind();
+    $("h1").text("Game Over, Click here to restart");
 
     var wrong = new Audio("sounds/wrong.mp3");
     wrong.play();
@@ -119,9 +130,19 @@ function checkAnswer(currentLevel) {
 function startOver() {
   level = 0;
   gamePattern = [];
+  userClickedPatterns = [];
 
   //The startig sequence Again!
-  ["keypress", "touchstart"].forEach( function (evt) {
-    document.querySelector("body").addEventListener(evt, nextSequence, false);
-  })
+  // $(document).keydown(function() {
+  //   nextSequence()
+  //
+  //   $(document).unbind();
+  // });
+
+
+  $("h1").click( function () {
+    nextSequence();
+
+    $("h1").unbind();
+});
 };

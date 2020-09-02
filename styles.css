@@ -51,6 +51,10 @@ body {
   background-color: grey;
 }
 
+.mob{
+  display: none;
+}
+
 /* Media queries */
 @media (max-width: 1105px) {
   .container {
