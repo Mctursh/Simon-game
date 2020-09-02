@@ -12,18 +12,9 @@ var level = 0;
 // Starting Sequence
 
 
-$(document).keydown(function() {
-  nextSequence()
-
-  $(document).unbind();
-});
-
-// Starting sequence for mobile
-document.querySelector("body").addEventListener("touchstart", function () {
-  nextSequence();
-  document.querySelector("body").removeEventListener("touchstart");
+["keypress", "ontouchstart"].forEach( function (evt) {
+  document.querySelector("body").addEventListener(evt, nextSequence, false);
 })
-
 
 $(".btn").click(function(event) {
   var userChosenColor = event.target.id;
@@ -130,14 +121,7 @@ function startOver() {
   gamePattern = [];
 
   //The startig sequence Again!
-  $(document).keydown(function() {
-    nextSequence()
-
-    $(document).unbind();
-  });
-
-  document.querySelector("body").addEventListener("touchstart", function () {
-    nextSequence();
-    document.querySelector("body").removeEventListener("touchstart");
+  ["keypress", "ontouchstart"].forEach( function (evt) {
+    document.querySelector("body").addEventListener(evt, nextSequence, false);
   })
 };
