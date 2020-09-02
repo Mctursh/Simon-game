@@ -18,7 +18,11 @@ $(document).keydown(function() {
   $(document).unbind();
 });
 
-
+// Starting sequence for mobile
+document.querySelector("body").addEventListener("touchstart", function () {
+  nextSequence();
+  document.querySelector("body").removeEventListener("touchstart");
+})
 
 
 $(".btn").click(function(event) {
@@ -131,4 +135,9 @@ function startOver() {
 
     $(document).unbind();
   });
-}
+
+  document.querySelector("body").addEventListener("touchstart", function () {
+    nextSequence();
+    document.querySelector("body").removeEventListener("touchstart");
+  })
+};
